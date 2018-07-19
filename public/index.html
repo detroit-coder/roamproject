@@ -1,0 +1,82 @@
+<!DocType html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <!-- Google Font was used to change the font of our results view -->
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Coustard" rel="stylesheet">
+    
+   
+    
+    <base href="/">
+</head>
+<body>
+  <div id="top"></div>
+     <video playsinline autoplay muted loop id="bgvid">
+            <source src="media/Video2.mp4" type="video/mp4">
+    </video>
+    
+	<div ng-app="myApp">
+	<div class="aboutParent">  
+  <a class="about" href="#/aboutView">About</a>
+       <a href="#/welcomeView"><img class="homeButton" src="media/home_white_24px.svg"></a>
+    </div>
+   <div class="mainContainer">
+      
+    
+       
+       
+    <div class="titleBox">
+        <img class="logo" src="media/directions_walk_white_24px.svg">
+        <div class="title">
+            <span class="roam">Roam.   </span><span class="tagline">Not All Who Wander Are Lost.</span>
+        </div>
+    </div>
+    
+    <div class="imageBox">
+<!--
+        <video playsinline autoplay muted loop id="bgvid">
+            <source src="media/Video2.mp4" type="video/mp4">
+        </video>
+-->
+        
+        <div class="insetBorder">
+          
+                <ng-view autoscroll="true">
+                 
+                </ng-view>
+       
+            
+        </div>
+    </div>
+ 
+    </div>
+    <div class="socialMediaButtons">
+        <a href=""><img  src="media/facebook-5.svg"></a>
+        <a href=""><img src="media/twitter-5.svg"></a>
+        <a href=""><img src="media/instagram-15.svg"></a>
+        <a href=""><img src="media/linkedin-5.svg"></a>
+        <a href=""><img src="media/github-5.svg"></a>
+    </div>
+<div class="footerParent">   
+<div class="footer"><p>Copyright 2017  |  Detroit, MI </p></div></div> 	
+
+         
+          </div>
+    
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.js"></script>
+	<script src="app.js"></script>
+	<script src="maincontroller.js"></script>
+    <script src= "resultscontroller.js"></script>
+    <script src="geoFactory.js"></script>
+    <script src="Factory.js"></script>
+    <script src="twitterFactory.js"></script>
+    <script src="seatgeekFactory.js"></script>
+   
+    
+
+</body>
+</html>

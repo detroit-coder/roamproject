@@ -1,0 +1,89 @@
+
+<!--<div id="top"></div>-->
+<div class="resultsContainer">
+<div class="resultTop">
+
+    
+    
+<div class="scrollbuttons">
+<img ng-click="scrollTo('food')" id="knifeIcon" src="media/knife.svg">
+<img ng-click="scrollTo('tics')" id="ticketIcon"src="media/ticket.svg">
+<img ng-click="scrollTo('buzz')" id="twitterIcon" src="media/twitter.svg">
+ </div>
+    
+<img id="map" src="https://maps.googleapis.com/maps/api/staticmap?center={{location}}&zoom=14&scale=1&size=850x450&maptype=roadmap&format=png&visual_refresh=true&markers=size:lrg%7Ccolor:0xff6666%7Clabel:%7C{{location}}" alt="Roam in Your Area">
+
+    
+</div>  
+    
+    
+<div id="food"></div>
+<div class="foursquareBox">
+    <p class="eatAroundHere">Grab a bite.</p>
+    <div class="fourContentBox">
+        <div class="foursquareResult" ng-repeat="item in venues | limitTo: 10">
+            <div class="fourInfo">
+                <p class="fourName">{{item.name}}</p>
+                <div class="fourLocation"><p>{{item.location.address}}</p>
+                <p>{{item.contact.formattedPhone}}</p><p><a class="foodUrl" target="_blank" href="{{item.url}}">{{item.url}}</a></p> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="tics"></div>
+</div>
+    
+    
+   
+<div class="seatgeekBox">
+    <div class="uponeBox">
+    <p class="seeAroundHere">Get some tickets.</p>
+    <img class="upone" ng-click="scrollTo('top')" src="media/uparrow.svg">
+    </div>
+    <div class="fourContentBox">
+        <div class="foursquareResult" ng-repeat = "seat in events">
+            <div class="fourInfo">
+                <p class="fourName">{{seat.title}}</p>    
+                <p class="fourLocationdate">{{seat.datetime_local |date: format: 'MMM d, y, h:mm:ss a'}}</p>
+                <p class="fourLocation">{{seat.venue.name}}</p>
+                <p class="fourLocation">{{seat.venue.address}}, {{seat.venue.city}}</p> 
+          
+                <button id="buyTixBut"><a id ="buttText" target ="_blank" href="{{seat.venue.url}}">Buy Tickets</a></button>
+            </div>
+        </div>
+    </div>
+    <div id="buzz"></div>
+</div>
+
+        
+    
+<div class="twitterBox">
+    <div class="uptwoBox">
+    <p class="buzzAroundHere">See local buzz.</p>
+    <img class="uptwo" ng-click="scrollTo('top')" src="media/uparrow.svg">
+    </div>
+    <div class="fourContentBox">
+        <div class="foursquareResulttwit" ng-repeat="tweet in statuses | limitTo: 10">
+            <div class="fourInfoTwitter">
+               <div class="fourInfotwit">
+                    <img class="profileImage" src={{tweet.user.profile_image_url}}>
+                            
+                    <div class="tweetauthor">
+                                <p>{{tweet.user.name}} | {{tweet.user.screen_name}} | {{tweet.user.location}}</p>
+                                <p><p class="tweettext">{{tweet.text}}</p>
+                    </div>
+                </div>
+                    <img class="mediaimg" ng-hide='img === tweet.extended_entities.media[0].media_url' class="img" src={{tweet.extended_entities.media[0].media_url}}>
+                 
+                     
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+  
+
+
+  
